@@ -1,0 +1,63 @@
+# import random
+
+# print("\33[1mThe Dice Roll Generator!\33[0m")
+# print("------------------------")
+
+# while True:
+#     input("Press \33[1;32m'ENTER'\33[0m to roll the dice...")
+#     diceRoll = random.randint(1, 6)
+#     print("You rolled a", diceRoll)
+#     rollAgain = input("Roll again? (y/n) ")
+#     if rollAgain.lower() != "y":
+#         break
+
+# print("Thanks for playing!")
+
+
+import random
+
+playerA = input("Enter Player \33[1;32mEMOJI\33[0m or \33[1;32mNAME\33[0m: ")
+playerB = input("Enter Player \33[1;32mEMOJI\33[0m or \33[1;32mNAME\33[0m: ")
+print("\33[1;30m-------------------------------\33[0m")
+
+
+playerA_wins = 0
+playerB_wins = 0
+rounds = 3 
+
+for i in range(rounds):
+    print("\33[1mR o u n d\33[0m", i+1)
+    input(playerA + " press\33[1;32m'ENTER'\33[0mto roll the dice: ")
+    playerA_roll = random.randint(1, 6)
+    print(playerA , "Got: ", playerA_roll)
+
+    input(playerB + " press\33[1;32m'ENTER'\33[0mto roll the dice: ")
+    playerB_roll = random.randint(1, 6)
+    print(playerB , "Got: ", playerB_roll)
+    
+    if playerA_roll == playerB_roll:
+        print("Tie!")
+        print("\33[1;30m-------------------------------\33[0m")
+    elif playerA_roll > playerB_roll:
+        print(playerA, "Wins!")
+        print("\33[1;30m-------------------------------\33[0m")
+        playerA_wins += 1
+    else:
+        print(playerB, "Wins!")
+        print("\33[1;30m-------------------------------\33[0m")
+        playerB_wins += 1
+
+print("\33[1m\nG a m e O v e r !\33[0m")
+print("===============================")
+if playerA_wins > playerB_wins:
+    print(playerA,"Got: ",playerA_wins)
+    print(playerB,"Got: ",playerB_wins)
+    print("\n\33[1m",playerA,":  i s  T h e  W i n n e r ! (▀̿Ĺ̯▀̿ ̿)\33[0m")
+elif playerB_wins > playerA_wins:
+    print(playerB,"Got: ",playerB_wins)
+    print(playerA,"Got: ",playerA_wins)
+    print("\n\33[1m",playerB,":  i s  T h e  W i n n e r ! []~(￣▽￣)~*\33[0m")
+else:
+    print(playerA,"Got: ",playerA_wins)
+    print(playerB,"Got: ",playerB_wins)
+    print("\n\33[1mN O !  W I N N E R \33[0m😆")
